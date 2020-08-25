@@ -1,22 +1,25 @@
 <h2>comments</h2>
-<div class="card-container" *ngFor="let comment of comments">
-    <div class="card card-small" (click)=userOverview()>
-        <ul>
-            <li>
-                <mat-icon>account_circle</mat-icon> {{comment.name}}  
-            </li>
-            <li>
-                <mat-icon>alternate_email</mat-icon>
-                {{comment.email}}  
-            </li>
-            <li>
-                <mat-icon>comment</mat-icon>{{comment.body}}  
-            </li>
-            
-        </ul>
+<mat-dialog-content>
+    <div class="card-container" *ngFor="let comment of comments">
+        <div class="card card-small">
+            <ul>
+                <li>
+                    <mat-icon>account_circle</mat-icon> {{comment.name}}  
+                </li>
+                <li>
+                    <mat-icon>alternate_email</mat-icon>
+                    {{comment.email}}  
+                </li>
+                <li>
+                    <mat-icon>comment</mat-icon>{{comment.body}}  
+                </li>
+                
+            </ul>
+        </div>
     </div>
-</div>
-
-<div mat-dialog-actions>
-    <button mat-button (click)="onNoClick()">close view</button>
-</div>
+    
+    <div mat-dialog-actions>
+        <button mat-button (click)="onNoClick()">close view</button>
+    </div>
+    
+</mat-dialog-content>

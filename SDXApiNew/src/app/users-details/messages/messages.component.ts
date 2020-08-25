@@ -34,7 +34,6 @@ export class MessagesComponent implements OnInit {
     this.serviceMessage.fetchComments(post.id).subscribe((comments)=>{
     
       this.dialog.open( CommentsComponent, {
-        width: '350px',
         data: comments
       });
     });
