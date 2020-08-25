@@ -1,1 +1,22 @@
-<p>messages List component works!</p>
+<h2>User messages</h2>
+
+<mat-accordion>
+    <div *ngFor="let post of postsUser">
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon>message</mat-icon>
+            </mat-panel-title>
+            <mat-panel-description>
+                {{post.title}}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <a>
+            {{post.body}}
+          </a>
+          <button (click)=showComments(post)>
+            <mat-icon>list</mat-icon> comments
+          </button>
+        </mat-expansion-panel>
+    </div>
+</mat-accordion>

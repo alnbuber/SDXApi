@@ -5,9 +5,8 @@ import { UserDto } from './userDTO';
 
 @Component({
   selector: 'app-users',
-templateUrl: './users.component.html',
-  styles: [
-  ]
+  templateUrl: './users.component.html',
+  styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
 
@@ -19,7 +18,6 @@ export class UsersComponent implements OnInit {
      
     this.usersService.fetchUsers().subscribe(
       (items) => {
-          console.log(items[0]);
           this.users = items;
         }
     );

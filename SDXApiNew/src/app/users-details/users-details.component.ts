@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
 import { Router } from '@angular/router'
+import { UsersDetailsService } from './users-details.service';
+import { UserDto } from '../users/userDTO';
 
 @Component({
   selector: 'app-users-details',
@@ -9,16 +11,47 @@ import { Router } from '@angular/router'
 })
 export class UsersDetailsComponent implements OnInit {
 
-  id: number;
+  selectedUser: UserDto = 
+  {
+    id: 0,
+    name: "",
+    username: "",
+    email: "",
+    address: {
+      street: "",
+      suite: "",
+      city: "",
+      zipcode: "",
+      geo: {
+        lat: 0,
+        lng: 0
+      }
+    },
+    phone: "",
+    website: "",
+    company: {
+      name: "",
+      catchPhrase: "",
+      bs: ""
+    }   };
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private userService: UsersDetailsService ,
+              private router: Router, 
+              private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.id = parseInt(this.activatedRoute.snapshot.paramMap.get("id"));
+    const idUser = parseInt(this.activatedRoute.snapshot.paramMap.get("id"));
+    this.fetchUser(idUser);
   }
 
-  userOverview() {
-    this.router.navigate(['./'], {relativeTo: this.activatedRoute});
+  fetchUser(id: number) {
+    this.userService.fetchUserInformation(id).subscribe((userFetch)=>{
+      this.selectedUser = userFetch;
+    })
+  }
+
+  usersList() {
+    this.router.navigate(['../'], {relativeTo: this.activatedRoute});
   }
 
   userMessages() {

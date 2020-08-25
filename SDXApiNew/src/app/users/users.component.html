@@ -1,5 +1,18 @@
 <h2>Users - This is working!!</h2>
 
-<div *ngFor="let user of users">
-    <button (click)=displayUserInfo(user.id)>{{user.id}}</button>
-</div>
+<mat-accordion>
+  <div *ngFor="let user of users">
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <button (click)=displayUserInfo(user.id)><mat-icon>account_circle</mat-icon></button>
+        </mat-panel-title>
+        <mat-panel-description>
+          {{user.name}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>Info: {{user.email}}</p>
+      <button (click)=displayUserInfo(user.id)><mat-icon>check_box</mat-icon></button>
+    </mat-expansion-panel>
+  </div>
+</mat-accordion>

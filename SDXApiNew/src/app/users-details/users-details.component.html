@@ -1,9 +1,58 @@
-<h2>User with id: {{id}}</h2>
-<p>users-details works!</p>
+<div class="content">
+  <div class="card highlight-card card-small">
+    <mat-icon>account_circle</mat-icon>
+    <span>Information for {{selectedUser.name}}</span>
+  </div>
+    
+  <div class="card-container">
+      <div class="card card-small" (click)=usersList()>
+        <mat-icon>keyboard_return</mat-icon>
+        <span>users list</span>
+      </div>
 
-<button (click)=userOverview()>Overview</button>
-<button (click)=userMessages()>Messages</button>
-<button (click)=userAlbums()>Albums</button>
-<button (click)=userTodos()>Todos</button>
+      <div class="card card-small" (click)=userMessages()>
+        <mat-icon>messages</mat-icon>
+        <span>messages</span>
+      </div>
 
-<router-outlet></router-outlet>
+      <div class="card card-small" (click)=userAlbums()>
+        <mat-icon>photo_album</mat-icon>
+        <span>Albums</span>
+      </div>
+
+      <div class="card card-small" (click)=userTodos()>
+        <mat-icon>fact_check</mat-icon>
+        <span>todos</span>
+      </div>
+  </div>
+
+  <div *ngIf="displayInformation && displayInformation == true">
+    <div class="card-container">
+      <div class="" (click)=usersList()>
+        <ul>
+          <li>
+            <mat-icon>account_circle</mat-icon>
+            {{selectedUser.name}}
+          </li>
+          <li>
+            <mat-icon>account_circle</mat-icon>
+            {{selectedUser.username}}
+          </li>
+          <li>
+            <mat-icon>account_circle</mat-icon>
+            {{selectedUser.email}}
+          </li>
+          <li>
+            <mat-icon>account_circle</mat-icon>
+            {{selectedUser.address.street}}, {{selectedUser.address.suite}}, {{selectedUser.address.city }} {{selectedUser.address.zipcode}}
+          </li>
+        </ul>
+        
+      </div>
+  </div>
+  </div>
+  
+  <router-outlet></router-outlet>
+</div>
+
+
