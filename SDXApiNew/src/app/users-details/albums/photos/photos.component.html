@@ -1,0 +1,24 @@
+<mat-dialog-content>
+    <h2>
+        Album {{photos[1].albumId}}
+    </h2>
+    <div *ngFor="let comment of photos">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>
+                    <mat-icon>
+                        camera_alt
+                    </mat-icon>
+                </mat-card-title>
+                <mat-card-subtitle>{{comment.title}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src={{comment.thumbnailUrl}} alt="Photo">
+            </mat-card>
+    </div>
+    
+    <div mat-dialog-actions>
+        <button mat-button (click)="onNoClick()">close view</button>
+    </div>
+    
+</mat-dialog-content>

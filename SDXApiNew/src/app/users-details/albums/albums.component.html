@@ -1,1 +1,22 @@
-<p>albums works!</p>
+<h2>User albums</h2>
+
+<mat-accordion>
+    <div *ngFor="let album of userAlbums">
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon>photo_album</mat-icon>
+            </mat-panel-title>
+            <mat-panel-description>
+                {{album.title}}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <a>
+            Number of images
+          </a>
+          <button (click)=displayPhotos(album.id)>
+            <mat-icon>list</mat-icon> see images
+          </button>
+        </mat-expansion-panel>
+    </div>
+</mat-accordion>

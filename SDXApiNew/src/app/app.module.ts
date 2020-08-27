@@ -15,6 +15,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { CommentsComponent } from './users-details/messages/comments/comments.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { PhotosComponent } from './users-details/albums/photos/photos.component';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -27,6 +29,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     AlbumsComponent,
     TodosComponent,
     CommentsComponent,
+    PhotosComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +39,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatExpansionModule,
     MatIconModule,
     MatDialogModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

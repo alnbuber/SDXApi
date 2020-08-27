@@ -1,21 +1,25 @@
 <h2>comments</h2>
 <mat-dialog-content>
-    <div class="card-container" *ngFor="let comment of comments">
-        <div class="card card-small">
-            <ul>
-                <li>
-                    <mat-icon>account_circle</mat-icon> {{comment.name}}  
-                </li>
-                <li>
-                    <mat-icon>alternate_email</mat-icon>
-                    {{comment.email}}  
-                </li>
-                <li>
-                    <mat-icon>comment</mat-icon>{{comment.body}}  
-                </li>
-                
-            </ul>
-        </div>
+    <div *ngFor="let comment of comments">
+        <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>
+                <mat-icon>account_circle</mat-icon> {{comment.name}}
+              </mat-card-title>
+              <mat-card-subtitle>
+                  <mat-icon>
+                      alternate_email
+                  </mat-icon>
+                    {{comment.email}}
+              </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <p>
+                <mat-icon>comment</mat-icon>{{comment.body}} 
+              </p>
+            </mat-card-content>
+          </mat-card>
     </div>
     
     <div mat-dialog-actions>
