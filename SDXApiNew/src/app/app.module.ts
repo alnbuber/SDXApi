@@ -17,6 +17,7 @@ import { CommentsComponent } from './users-details/messages/comments/comments.co
 import { MatDialogModule } from '@angular/material/dialog';
 import { PhotosComponent } from './users-details/albums/photos/photos.component';
 import { MatCardModule } from '@angular/material/card';
+import {MatTable, MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { MatCardModule } from '@angular/material/card';
     MatExpansionModule,
     MatIconModule,
     MatDialogModule,
-    MatCardModule
+    MatCardModule,
+    MatTableModule, 
   ],
   providers: [],
   bootstrap: [AppComponent]
