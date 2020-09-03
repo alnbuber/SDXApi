@@ -11,7 +11,7 @@ export class UsersService {
   constructor(private http: HttpClient) { }
 
   fetchUsers(): Observable<any> {
-    const urlRoute = 'http://jsonplaceholder.typicode.com/users';
+    const urlRoute = 'http://164.90.184.119:3000/users';
     return this.http.get(urlRoute);
   }
 }

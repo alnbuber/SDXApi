@@ -32,7 +32,6 @@ export class MessagesComponent implements OnInit {
 
   showComments(post: MessageDTO){
     this.serviceMessage.fetchComments(post.id).subscribe((comments)=>{
-    
       this.dialog.open( CommentsComponent, {
         data: comments
       });
